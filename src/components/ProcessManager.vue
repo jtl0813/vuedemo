@@ -31,7 +31,7 @@
     </div>
     <div class="result">
       <h3>Query Result:</h3>
-      <div style="margin: 20px 0;"></div>
+      <div style="margin: 30px 0;"></div>
       <el-button type="primary" @click="startProcess">Start Process</el-button>
       <el-button type="primary" @click="stopProcess">Stop Process</el-button>
       <el-button type="primary" @click="restartProcess">Restart Process</el-button><br>

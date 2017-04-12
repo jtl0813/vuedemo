@@ -1,7 +1,8 @@
 <template>
   <div class="processmanager">
     <div class="query">
-      <h3>Query Conditions</h3>
+      <h3>Query Conditions:</h3>
+      <div style="margin: 20px 0;"></div>
       <el-select v-model="pss_sel"
                  multiple
                  placeholder="Choose Process System">
@@ -29,10 +30,20 @@
       <el-button type="primary" @click="queryProcess">Query Process</el-button>
     </div>
     <div class="result">
-      <h3>Query Result</h3>
-      <el-button type="primary">Start</el-button>
-      <el-button type="primary">Shutdown</el-button>
-      <el-button type="primary">Restart</el-button>
+      <h3>Query Result:</h3>
+      <div style="margin: 20px 0;"></div>
+      <el-button type="primary" @click="startProcess">Start Process</el-button>
+      <el-button type="primary" @click="stopProcess">Stop Process</el-button>
+      <el-button type="primary" @click="restartProcess">Restart Process</el-button><br>
+      <div style="margin: 30px 0;"></div>
+      <el-select v-model="process_sel"
+                 multiple
+                 placeholder="Choose Process">
+        <el-option v-for="process in processes"
+                   :label="process"
+                   :value="process">
+        </el-option>
+      </el-select>     
     </div>
   </div>
 </template>
@@ -49,7 +60,7 @@ export default {
       pms_sel: null,
       pas_sel: null,
       processes: null,
-      process_checked: null
+      process_sel: []
     }
   },
   created: function () {
@@ -87,22 +98,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.processmanager{
+  display: flex;
+  flex-direction: column;
 }
 </style>

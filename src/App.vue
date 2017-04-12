@@ -1,5 +1,15 @@
 <template>
   <div id="app">
+    <el-menu theme="dark"
+             :default-active="activeIndex"
+             class="el-menu-demo"
+             mode="horizontal"
+             @select="handleSelect"
+             router="true">
+      <el-menu-item index="/">Home</el-menu-item>
+      <el-menu-item index="processmanager">ProcessManager</el-menu-item>
+      <el-menu-item index="logmanager">LogManager</el-menu-item>
+    </el-menu>
     <router-view></router-view>
   </div>
 </template>
@@ -11,12 +21,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

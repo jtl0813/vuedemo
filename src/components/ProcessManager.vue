@@ -32,11 +32,7 @@
       <h3>Query Result</h3>
       <el-button type="primary">Start</el-button>
       <el-button type="primary">Shutdown</el-button>
-      <el-button type="primary">Restart</el-button><br>
-      <el-checkbox-group max=100 v-model="process_checked" v-for="process in processes">
-        <el-checkbox :label="process"></el-checkbox>
-      </el-checkbox-group>
-      {{process_checked}}
+      <el-button type="primary">Restart</el-button>
     </div>
   </div>
 </template>
